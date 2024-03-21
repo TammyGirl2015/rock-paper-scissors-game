@@ -16,7 +16,16 @@ while player_score < 2 and computer_score < 2:
     Main game loop: player is prompted to enter an option and computer chooses a random option. 
     """
     computer = random.choice(['rock', 'paper', 'scissors'])
-    player = input("Enter your move (rock, paper, scissors): ").lower()
+    
+    while True:
+        """
+        Input validation: keep asking for input until a valid choice is made.
+        """
+        player = input("Enter your move (rock, paper, scissors): ").lower()
+        if player in ['rock', 'paper', 'scissors']:
+            break
+        else:
+            print("Invalid choice. Please enter rock, paper, or scissors.")
 
     """
     This code determines the winner of the round as per the game rules by displaying '1' for the winner, '0' for the loser and 'tie' if it is a draw.
